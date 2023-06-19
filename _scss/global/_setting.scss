@@ -4,8 +4,10 @@
 @include f.font-face('YakuHanJP', '../fonts/YakuHanJP/YakuHanJP-Black', 900, normal, eot woff woff2);
 @include f.font-face('YakuHanJP', '../fonts/YakuHanJP/YakuHanJP-Bold', bold, normal, eot woff woff2);
 @include f.font-face('YakuHanJP', '../fonts/YakuHanJP/YakuHanJP-Medium', Medium, normal, eot woff woff2);
-@include f.font-face('YakuHanJP', '../fonts/YakuHanJP/YakuHanJP-DemiLight', 300, normal, eot woff woff2);
-@include f.font-face('YakuHanJP', '../fonts/YakuHanJP/YakuHanJP-Light', 200, normal, eot woff woff2);
+@include f.font-face('YakuHanJP', '../fonts/YakuHanJP/YakuHanJP-Regular', 500, normal, eot woff woff2);
+@include f.font-face('YakuHanJP', '../fonts/YakuHanJP/YakuHanJP-DemiLight', 400, normal, eot woff woff2);
+@include f.font-face('YakuHanJP', '../fonts/YakuHanJP/YakuHanJP-Light', 300, normal, eot woff woff2);
+@include f.font-face('YakuHanJP', '../fonts/YakuHanJP/YakuHanJP-Thin', 200, normal, eot woff woff2);
 
 
 $base_font:'YakuhanJP', 'Zen Kaku Gothic New', "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic" , 'Lucida Grande', "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, sans-serif;

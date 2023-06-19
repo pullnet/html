@@ -2,7 +2,7 @@
 @use "setting" as s;
 
 /*共通設定*/
-$black:#222;
+$black:#4d4d4d;
 $blue:#006697;
 
 $width:1200px;
@@ -14,6 +14,7 @@ body {
   font-size: 15px;
   line-height: 1.8;
   letter-spacing: 0.05rem;
+  font-weight: normal;
   @include s.mq{
       font-size: 13.5px;
   }
@@ -24,6 +25,7 @@ h1,h2,h3,h4,h5,h6{
   font-family: s.$base_font;
   line-height: 1.8;
   letter-spacing: 0.05rem;
+  font-weight: 700;
   @include s.mq{
       line-height: 1.5;
   }
@@ -200,6 +202,10 @@ font-size: 35px;
 .page-width{
   max-width: $width;
   margin: 0 auto;
+  @include s.mq(xl){
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
 
 
