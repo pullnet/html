@@ -2,10 +2,10 @@
 @use "setting" as s;
 
 /*共通設定*/
-$black:#4d4d4d;
-$blue:#006697;
+$black: #4d4d4d;
+$blue: #006697;
 
-$width:1200px;
+$width: 1200px;
 
 
 body {
@@ -15,42 +15,54 @@ body {
   line-height: 1.8;
   letter-spacing: 0.05rem;
   font-weight: normal;
-  @include s.mq{
-      font-size: 13.5px;
+
+  @include s.mq {
+    font-size: 13.5px;
   }
 }
 
 
-h1,h2,h3,h4,h5,h6{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: s.$base_font;
   line-height: 1.8;
   letter-spacing: 0.05rem;
   font-weight: 700;
-  @include s.mq{
-      line-height: 1.5;
+
+  @include s.mq {
+    line-height: 1.5;
   }
 }
 
-button,option,input{
+button,
+option,
+input {
   font-family: s.$base_font;
 }
 
-a{
+a {
   color: inherit;
-  &:hover{
+
+  &:hover {
     color: $blue;
   }
 }
-button,a{
-  &:hover{
+
+button,
+a {
+  &:hover {
     transition: .3s ease-in-out;
   }
 }
 
-.arrow-r{
+.arrow-r {
   position: relative;
 
-  &:after{
+  &:after {
     content: "";
     width: 8px;
     height: 8px;
@@ -70,439 +82,246 @@ button,a{
 
 
 // font-weight
+$font-weights: (
+  300,
+  400,
+  500,
+  600,
+  700,
+  800,
+  900
+);
 
-.fw-300 {
-    font-weight: 300;
-}
-.fw-400 {
-font-weight: 400;
-}
-.fw-500 {
-font-weight: 500;
-}
-.fw-600 {
-font-weight: 600;
-}
-.fw-700 {
-font-weight: 700;
-}
-.fw-800 {
-font-weight: 800;
-}
-.fw-900 {
-font-weight: 900;
+@each $weight in $font-weights {
+  .fw-#{$weight} {
+    font-weight: $weight;
+  }
 }
 
 
 // font-size
 .fs-12 {
-    font-size: 12px;
-    @include s.mq {
-      font-size: 10px;
-    }
+  font-size: 12px;
+
+  @include s.mq {
+    font-size: 10px;
+  }
 }
+
 .fs-13 {
-font-size: 13px;
-@include s.mq {
+  font-size: 13px;
+
+  @include s.mq {
     font-size: 11px;
-}
+  }
 }
 
 .fs-15 {
-font-size: 15px;
-@include s.mq {
+  font-size: 15px;
+
+  @include s.mq {
     font-size: 13px;
-}
+  }
 }
 
 .fs-16 {
-font-size: 16px;
-@include s.mq {
+  font-size: 16px;
+
+  @include s.mq {
     font-size: 13px;
-}
+  }
 }
 
 .fs-18 {
-font-size: 18px;
-@include s.mq {
+  font-size: 18px;
+
+  @include s.mq {
     font-size: 15px;
-}
+  }
 }
 
 .fs-20 {
-font-size: 20px;
-@include s.mq {
+  font-size: 20px;
+
+  @include s.mq {
     font-size: 18px;
-}
+  }
 }
 
 .fs-22 {
-font-size: 22px;
-@include s.mq {
+  font-size: 22px;
+
+  @include s.mq {
     font-size: 18px;
-}
+  }
 }
 
 .fs-24 {
-font-size: 24px;
-@include s.mq {
+  font-size: 24px;
+
+  @include s.mq {
     font-size: 20px;
-}
+  }
 }
 
 .fs-30 {
-font-size: 30px;
-@include s.mq {
+  font-size: 30px;
+
+  @include s.mq {
     font-size: 24px;
-}
+  }
 }
 
 .fs-35 {
-font-size: 35px;
-@include s.mq {
+  font-size: 35px;
+
+  @include s.mq {
     font-size: 26px;
-}
+  }
 }
 
 /*text color---------------------------------*/
 
-.fc-w{
-    color: #fff;
+.fc-w {
+  color: #fff;
 }
 
 /*background---------------------------------*/
-.bg_blue{
-    background-color: #F0FAFA;
+.bg_blue {
+  background-color: #F0FAFA;
 }
 
-.bg_white{
-    background-color: #fff;
+.bg_white {
+  background-color: #fff;
 }
 
 
 
 /*align---------------------------------*/
 
-.alL{
-    text-align: left !important;
-  }
-  
-  .alR{
-    text-align: right !important;
-  }
-  
-  .alC{
-    text-align: center !important;
-  }
-  
+.alL {
+  text-align: left !important;
+}
+
+.alR {
+  text-align: right !important;
+}
+
+.alC {
+  text-align: center !important;
+}
+
 
 
 /*width---------------------------------*/
 
-.page-width{
+.page-width {
   max-width: $width;
   margin: 0 auto;
-  @include s.mq(xl){
+
+  @include s.mq(xl) {
     padding-left: 15px;
     padding-right: 15px;
   }
 }
 
 
-/*margin---------------------------------*/
 
-.mb0 {
-    margin-bottom: 0 !important;
+/*余白---------------------------------*/
+$spacing-sizes: (
+  0,
+  10,
+  20,
+  30,
+  40,
+  50,
+  60,
+  80,
+  100,
+  120
+);
+
+@each $size in $spacing-sizes {
+
+  /*margin---------------------------------*/
+  .mt#{$size} {
+    margin-top: $size * 1px !important;
+
     @include s.mq {
-      margin-bottom: 0 !important;
+      margin-top: ($size * 0.5) * 1px !important;
     }
   }
-  
-  .mb10 {
-    margin-bottom: 10px !important;
+
+  .mb#{$size} {
+    margin-bottom: $size * 1px !important;
+
     @include s.mq {
-      margin-bottom: 5px !important;
+      margin-bottom: ($size * 0.5) * 1px !important;
     }
   }
-  
-  .mb20 {
-    margin-bottom: 20px !important;
-    @include s.mq {
-      margin-bottom: 10px !important;
-    }
-  }
-  
-  .mb30 {
-    margin-bottom: 30px !important;
-    @include s.mq {
-      margin-bottom: 15px !important;
-    }
-  }
-  
-  .mb40 {
-    margin-bottom: 40px !important;
-    @include s.mq {
-      margin-bottom: 20px !important;
-    }
-  }
-  
-  .mb50 {
-    margin-bottom: 50px !important;
-    @include s.mq {
-      margin-bottom: 25px !important;
-    }
-  }
-  
-  .mb60 {
-    margin-bottom: 60px !important;
-    @include s.mq {
-      margin-bottom: 30px !important;
-    }
-  }
-  
-  .mb80 {
-    margin-bottom: 80px !important;
-    @include s.mq {
-      margin-bottom: 40px !important;
-    }
-  }
-  
-  .mb100 {
-    margin-bottom: 100px !important;
-    @include s.mq {
-      margin-bottom: 50px !important;
-    }
-  }
-  
-  .mt0 {
-    margin-top: 0 !important;
-    @include s.mq {
-      margin-top: 0 !important;
-    }
-  }
-  
-  .mt10 {
-    margin-top: 10px !important;
-    @include s.mq {
-      margin-top: 5px !important;
-    }
-  }
-  
-  .mt20 {
-    margin-top: 20px !important;
-    @include s.mq {
-      margin-top: 10px !important;
-    }
-  }
-  
-  .mt30 {
-    margin-top: 30px !important;
-    @include s.mq {
-      margin-top: 15px !important;
-    }
-  }
-  
-  .mt40 {
-    margin-top: 40px !important;
-    @include s.mq {
-      margin-top: 20px !important;
-    }
-  }
-  
-  .mt50 {
-    margin-top: 50px !important;
-    @include s.mq {
-      margin-top: 25px !important;
-    }
-  }
-  
-  .mt60 {
-    margin-top: 60px !important;
-    @include s.mq {
-      margin-top: 30px !important;
-    }
-  }
-  
-  .mt80 {
-    margin-top: 80px !important;
-    @include s.mq {
-      margin-top: 40px !important;
-    }
-  }
-  
-  .mt100 {
-    margin-top: 100px !important;
-    @include s.mq {
-      margin-top: 50px !important;
-    }
-  }
-  
+
   /*padding---------------------------------*/
-  
-  .pb0 {
-    padding-bottom: 0 !important;
+  .pt#{$size} {
+    padding-top: $size * 1px !important;
+
     @include s.mq {
-      padding-bottom: 0 !important;
+      padding-top: ($size * 0.5) * 1px !important;
     }
   }
-  
-  .pb10 {
-    padding-bottom: 10px !important;
+
+  .pb#{$size} {
+    padding-bottom: $size * 1px !important;
+
     @include s.mq {
-      padding-bottom: 5px !important;
+      padding-bottom: ($size * 0.5) * 1px !important;
     }
   }
-  
-  .pb20 {
-    padding-bottom: 20px !important;
-    @include s.mq {
-      padding-bottom: 10px !important;
-    }
-  }
-  
-  .pb30 {
-    padding-bottom: 30px !important;
-    @include s.mq {
-      padding-bottom: 15px !important;
-    }
-  }
-  
-  .pb40 {
-    padding-bottom: 40px !important;
-    @include s.mq {
-      padding-bottom: 20px !important;
-    }
-  }
-  
-  .pb50 {
-    padding-bottom: 40px !important;
-    @include s.mq {
-      padding-bottom: 25px !important;
-    }
-  }
-  
-  .pb60 {
-    padding-bottom: 60px !important;
-    @include s.mq {
-      padding-bottom: 30px !important;
-    }
-  }
-  
-  .pb80 {
-    padding-bottom: 80px !important;
-    @include s.mq {
-      padding-bottom: 40px !important;
-    }
-  }
-  
-  .pb100 {
-    padding-bottom: 100px !important;
-    @include s.mq {
-      padding-bottom: 50px !important;
-    }
-  }
-  
-  .pb120 {
-    padding-bottom: 120px !important;
-    @include s.mq {
-      padding-bottom: 60px !important;
-    }
-  }
-  
-  .pt0 {
-    padding-top: 0 !important;
-    @include s.mq {
-      padding-top: 0 !important;
-    }
-  }
-  
-  .pt10 {
-    padding-top: 10px !important;
-    @include s.mq {
-      padding-top: 5px !important;
-    }
-  }
-  
-  .pt20 {
-    padding-top: 20px !important;
-    @include s.mq {
-      padding-top: 10px !important;
-    }
-  }
-  
-  .pt30 {
-    padding-top: 30px !important;
-    @include s.mq {
-      padding-top: 15px !important;
-    }
-  }
-  
-  .pt40 {
-    padding-top: 40px !important;
-    @include s.mq {
-      padding-top: 20px !important;
-    }
-  }
-  
-  .pt50 {
-    padding-top: 50px !important;
-    @include s.mq {
-      padding-top: 25px !important;
-    }
-  }
-  
-  .pt60 {
-    padding-top: 60px !important;
-    @include s.mq {
-      padding-top: 30px !important;
-    }
-  }
-  
-  .pt80 {
-    padding-top: 80px !important;
-    @include s.mq {
-      padding-top: 40px !important;
-    }
-  }
-  
-  .pt100 {
-    padding-top: 100px !important;
-    @include s.mq {
-      padding-top: 50px !important;
-    }
-  }
-  
-  .pt120 {
-    padding-top: 120px !important;
-    @include s.mq {
-      padding-top: 60px !important;
-    }
-  }
+}
 
 
 /*layout---------------------------------*/
 
-.flex_wrap{
+.flex_wrap {
   display: flex;
   flex-flow: row wrap;
   align-items: center;
   gap: 20px;
-  @include s.mq{
+
+  @include s.mq {
     flex-flow: column wrap;
   }
 }
 
 
-/*only*/
-.pc_only{
-    display: block;
-    @include s.mq{
-        display: none;
-    }
+/*displayのレスポンシブ対応*/
+$displays: (
+  none,
+  inline,
+  inline-block,
+  block,
+  grid,
+  inline-grid,
+  table,
+  table-row,
+  table-cell,
+  flex,
+  inline-flex
+);
+
+// 基本 display クラス
+@each $display in $displays {
+  .d-#{$display} {
+    display: $display !important;
+  }
 }
-.sp_only{
-    display: none;
-    @include s.mq{
-        display: block;
+
+// カスタムブレイクポイント対応 display クラス（max-width）
+@each $breakpoint, $media in s.$breakpoints {
+  @each $display in $displays {
+    .d-#{$breakpoint}-#{$display} {
+      @include s.mq($breakpoint) {
+        display: $display !important;
+      }
     }
+  }
 }
