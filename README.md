@@ -33,7 +33,7 @@ SP 専用 `class="d-none d-md-block"`
   $max-view-port: 1920,
   // ビューポート最大幅(px)
   $rem: 16 // ルートフォントサイズ(px)
-);
+)
 ```
 
 - `$min` と `$max` を px 単位で指定
