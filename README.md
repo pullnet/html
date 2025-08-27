@@ -24,14 +24,10 @@ SP 専用 `class="d-none d-md-block"`
 
 ```scss
 @function setClamp(
-  $min,
-  // 最小サイズ(px)
-  $max,
-  // 最大サイズ(px)
-  $min-view-port: 375,
-  // ビューポート最小幅(px)
-  $max-view-port: 1920,
-  // ビューポート最大幅(px)
+  $min, // 最小サイズ(px)
+  $max, // 最大サイズ(px)
+  $min-view-port: 375, // ビューポート最小幅(px)
+  $max-view-port: 1920, // ビューポート最大幅(px)
   $rem: 16 // ルートフォントサイズ(px)
 )
 ```
