@@ -324,3 +324,26 @@ $displays: (
     }
   }
 }
+
+//   @function setClamp
+//   @param {Number} $min - 最小サイズ(px)
+//   @param {Number} $max - 最大サイズ(px)
+//   @param {Number} [$min-view-port=375] - 最小ビューポート幅(px)
+//   @param {Number} [$max-view-port=1920] - 最大ビューポート幅(px)
+//   @param {Number} [$rem=16] - ルートフォントサイズ(px)
+//   @return {CSS <length>} clampで返されるサイズ
+//  
+//   @example
+//     font-size: setClamp(16, 32);
+//     // => clamp(1rem, 0.75rem + 1vw, 2rem);
+//
+@function setClamp($min, $max, $min-view-port: 375, $max-view-port: 1920, $rem: 16) {
+  $variable-part: calc(($max - $min) / ($max-view-port - $min-view-port));
+  $constant: calc(($max - $max-view-port * $variable-part) / $rem);
+  $min-rem: calc($min / $rem * 1rem);
+  $max-rem: calc($max / $rem * 1rem);
+  $variable-rem: calc($constant * 1rem);
+  $variable-vw: calc(100 * $variable-part * 1vw);
+
+  @return clamp($min-rem, $variable-rem + $variable-vw, $max-rem);
+}
